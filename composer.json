@@ -1,0 +1,20 @@
+{
+    "name": "rudden/flash",
+    "type": "library",
+    "description": "Simple flash messages for Anax MVC",
+    "keywords": ["flash", "message", "session", "anax"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Rudén",
+            "email": "ruden.simon@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "rudden\\": "src/" }
+    }
+}
