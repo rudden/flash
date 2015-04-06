@@ -1,4 +1,4 @@
-Anax-MVC
+Flash Messages for Anax MVC Framework
 =========
 
 By Simon Rudén, ruden.simon@gmail.com.
