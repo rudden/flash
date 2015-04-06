@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Flash;
+namespace Rudden\Flash;
 
 /**
  *	A controller for flashmessages.

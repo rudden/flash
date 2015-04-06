@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Flash;
+namespace Rudden\Flash;
 
 /**
  *	A controller for flashmessages.
@@ -16,12 +16,9 @@ class FlashController
 	 * 
 	 * @return void.
 	 */
-	public function indexAction()
+	public function demoAction()
 	{
-		$this->theme->setTitle('FlashMessage');
-		$this->theme->addStylesheet('css/flash.css');
-
-		$output = $this->flash->output();
+		$output = $this->fmsg->output();
 
 		$this->views->add('flash/index', [
 			'output' => $output
@@ -30,21 +27,26 @@ class FlashController
 
 
 
-	public function demoAction()
+	/**
+	 * Shows different flashes depending on submit
+	 * 
+	 * @return void.
+	 */
+	public function choiceAction()
 	{
 		if ( $this->request->getPost('error') ) {
-            $this->flash->error('Error message');
+            $this->fmsg->error('Error message');
         }
         elseif ( $this->request->getPost('success') ) {
-           $this->flash->success('Success message');
+           $this->fmsg->success('Success message');
         }
         elseif ( $this->request->getPost('info') ) {
-           $this->flash->info('Info message');
+           $this->fmsg->info('Info message');
         }
         elseif ( $this->request->getPost('warning') ) {
-           $this->flash->warning('Warning message');
+           $this->fmsg->warning('Warning message');
         }
 
-		$this->response->redirect($this->url->create('flash'));
+		$this->response->redirect($this->url->create(''));
 	}
 }
