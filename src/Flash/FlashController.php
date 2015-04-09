@@ -3,7 +3,7 @@
 namespace Rudden\Flash;
 
 /**
- *	A controller for flashmessages.
+ *	A controller for a demo of the flashmessages.
  * 
  */
 class FlashController
@@ -18,7 +18,9 @@ class FlashController
 	 */
 	public function demoAction()
 	{
-		$output = $this->fmsg->output();
+		$this->theme->setTitle('Demo');
+		
+		$output = $this->fmsg->print();
 
 		$this->views->add('flash/index', [
 			'output' => $output

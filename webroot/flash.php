@@ -6,10 +6,10 @@ require __DIR__.'/config.php';
 // Create services and inject into the app. 
 $di  = new \Anax\DI\CDIFactoryDefault();
 
-$di->set('FlashController', function() use ($di) {
-    $controller = new Rudden\Flash\FlashController();
-    $controller->setDI($di);
-    return $controller;
+$di->setShared('fmsg', function() use ($di) {
+    $fmsg = new rudden\Flash\FlashMessages();
+    $fmsg->setDI($di);
+    return $fmsg;
 });
 
 $app = new \Anax\Kernel\CAnax($di);
@@ -17,15 +17,16 @@ $app = new \Anax\Kernel\CAnax($di);
 // Home Route
 $app->router->add('', function() use ($app) {
 
+	$app->theme->setTitle('Flash');
     $app->theme->addStyleSheet('css/flash.css');
 
-	$app->flash->success('Demo message');
-	$msg = $app->flash->output();
+	$app->fmsg->success('Success message');
+	$app->fmsg->info('Informative message');
+	$app->fmsg->error('Error message');
+	$app->fmsg->warning('Warning message');
+	$fmsg = $app->fmsg->print();
 
-	$app->views->add('default/page', [
-		'title'   => 'Hello',
-		'content' => $msg
-	]);
+	$app->views->addString($fmsg, 'main');
     
 });
 
