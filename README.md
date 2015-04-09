@@ -47,24 +47,24 @@ $di->setShared('fmsg', function() use ($di) {
 And now you can access the following methods to flash messages to the user:
 
 ```php
-	$app->fmsg->info('Info Message');
+$app->fmsg->info('Info Message');
 ```
 
 ```php
-	$app->fmsg->error('Error Message');
+$app->fmsg->error('Error Message');
 ```
 
 ```php
-	$app->fmsg->success('Success Message');
+$app->fmsg->success('Success Message');
 ```
 
 ```php
-	$app->fmsg->warning('Warning Message');
+$app->fmsg->warning('Warning Message');
 ```
 
 When you run the methods above you store a message in the session. To output it to the user, you run this:
 
-``php
+```php
 	$app->fmsg->print();
 ```
 
