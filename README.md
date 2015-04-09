@@ -65,7 +65,7 @@ $app->fmsg->warning('Warning Message');
 When you run the methods above you store a message in the session. To output it to the user, you run this:
 
 ```php
-	$app->fmsg->print();
+$app->fmsg->print();
 ```
 
 
