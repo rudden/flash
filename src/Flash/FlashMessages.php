@@ -38,7 +38,7 @@ class FlashMessages
 	 * 
 	 * @return string the stored message
 	 */
-	public function print()
+	public function printMessage()
 	{
 		$flash = $this->session->get('flashmessage', []);
 

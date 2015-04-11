@@ -24,7 +24,7 @@ $app->router->add('', function() use ($app) {
 	$app->fmsg->info('Informative message');
 	$app->fmsg->error('Error message');
 	$app->fmsg->warning('Warning message');
-	$fmsg = $app->fmsg->print();
+	$fmsg = $app->fmsg->printMessage();
 
 	$app->views->addString($fmsg, 'main');
     

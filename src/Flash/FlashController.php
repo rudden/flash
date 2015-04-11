@@ -20,7 +20,7 @@ class FlashController
 	{
 		$this->theme->setTitle('Demo');
 		
-		$output = $this->fmsg->print();
+		$output = $this->fmsg->printMessage();
 
 		$this->views->add('flash/index', [
 			'output' => $output
