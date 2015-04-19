@@ -6,7 +6,7 @@ namespace Rudden\Flash;
  *	A controller for flashmessages.
  * 
  */
-class FlashMessages
+class FlashMessages implements \Anax\DI\IInjectionAware
 {
 	use \Anax\DI\TInjectable;
 

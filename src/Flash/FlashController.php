@@ -4,9 +4,9 @@ namespace Rudden\Flash;
 
 /**
  *	A controller for a demo of the flashmessages.
- * 
+ *
  */
-class FlashController
+class FlashController implements \Anax\DI\IInjectionAware
 {
 	use \Anax\DI\TInjectable;
 
@@ -19,7 +19,7 @@ class FlashController
 	public function demoAction()
 	{
 		$this->theme->setTitle('Demo');
-		
+
 		$output = $this->fmsg->printMessage();
 
 		$this->views->add('flash/index', [
