@@ -1,6 +1,10 @@
 Flash Messages for Anax MVC Framework
 =========
 
+[![Build Status](https://travis-ci.org/rudden/flash.svg?branch=master)](https://travis-ci.org/rudden/flash)
+[![Code Coverage](https://scrutinizer-ci.com/g/rudden/flash/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/rudden/flash/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rudden/flash/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rudden/flash/?branch=master)
+
 This module buildt for Anax MVC saves a chosen flash message in the session and outputs it where you want within a div. The buildt in flash message types for now are info, success, error and warning.
 
 By Simon Rudén, ruden.simon@gmail.com
