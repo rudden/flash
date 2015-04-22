@@ -14,7 +14,7 @@ class FlashMessagesTest extends \PHPUnit_Framework_TestCase
 	 * @return void
 	 *
 	*/
-	public function testMessage()
+	public function testTypesOfMessages()
 	{
 		$flash = new \rudden\Flash\FlashMessages();
 		$di = new \Anax\DI\CDIFactoryDefault();
@@ -29,7 +29,7 @@ class FlashMessagesTest extends \PHPUnit_Framework_TestCase
 
 		// success message
 		$msg1 = $flash->message('success', 'success message');
-		$msg2 = $flash->success('a test success message');
+		$msg2 = $flash->success('success message');
 		$this->assertEquals($msg1, $msg2, "Values doesn't match");
 
 		// info message
@@ -46,6 +46,48 @@ class FlashMessagesTest extends \PHPUnit_Framework_TestCase
 		$msg1 = $flash->message('error', 'error message');
 		$msg2 = $flash->error('error message');
 		$this->assertEquals($msg1, $msg2, "Values doesn't match");
+	}
+
+
+
+
+	/**
+	 *
+	 * Test
+	 *
+	 * @return void
+	 *
+	*/
+	public function testMessages()
+	{
+		$flash = new \rudden\Flash\FlashMessages();
+		$di = new \Anax\DI\CDIFactoryDefault();
+		$flash->setDI($di);
+
+		$di->setShared('session', function () {
+			$session = new \Anax\Session\CSession();
+			$session->configure(ANAX_APP_PATH . 'config/session.php');
+			$session->name();
+			return $session;
+		});
+
+		$str = "test";
+
+		$msg1 = $flash->message('info', $str);
+		$msg2 = $flash->info('test');
+		$this->assertEquals($msg1, $msg2, "Values doesn't match.");
+
+		$msg1 = $flash->message('error', $str);
+		$msg2 = $flash->error('test');
+		$this->assertEquals($msg1, $msg2, "Values doesn't match.");
+
+		$msg1 = $flash->message('success', $str);
+		$msg2 = $flash->success('test');
+		$this->assertEquals($msg1, $msg2, "Values doesn't match.");
+
+		$msg1 = $flash->message('warning', $str);
+		$msg2 = $flash->warning('test');
+		$this->assertEquals($msg1, $msg2, "Values doesn't match.");
 	}
 
 

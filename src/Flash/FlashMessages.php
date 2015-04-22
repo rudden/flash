@@ -18,7 +18,7 @@ class FlashMessages implements \Anax\DI\IInjectionAware
 	 * @param string $type which type of message it is
 	 * @param string $message which message to show in the flash
 	 *
-	 * @return void.
+	 * @return void
 	 */
 	public function message($type, $message)
 	{

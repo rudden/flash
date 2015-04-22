@@ -1,0 +1,50 @@
+[
+    {
+        "name": "anax/mvc",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mosbth/Anax-MVC.git",
+            "reference": "bdaf353aaffffbb20fbe7409cd67377654ce9c58"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mosbth/Anax-MVC/zipball/bdaf353aaffffbb20fbe7409cd67377654ce9c58",
+            "reference": "bdaf353aaffffbb20fbe7409cd67377654ce9c58",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "time": "2015-04-04 22:51:10",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Anax\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mikael Roos",
+                "email": "me@mikaelroos.se",
+                "homepage": "http://mikaelroos.se",
+                "role": "Developer"
+            }
+        ],
+        "description": "Webtemplate to create websites",
+        "homepage": "http://dbwebb.se",
+        "keywords": [
+            "boilerplate",
+            "education",
+            "framework",
+            "micro",
+            "mvc"
+        ]
+    }
+]
